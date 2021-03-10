@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let a of albums">
+            <td>{{a.userId}}</td>
+            <td>{{a.id}}</td>
+            <td>{{a.title}}</td>
+        </tr>
+    </table>
+    <nav aria-label="...">
+        <ul class="pagination">
+          <li *ngFor="let p of pagenos" (click)="pagenoclick(p)" class="page-item"><a class="page-link">{{p}}</a></li>
+        </ul>
+      </nav>
+</div>
