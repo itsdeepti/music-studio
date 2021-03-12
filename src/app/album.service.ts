@@ -9,8 +9,11 @@ import { Observable } from 'rxjs';
 export class AlbumService {
 
   constructor(private httpService: HttpClient) { }
-  public get(): Observable<any> {
-    return this.httpService.get('https://jsonplaceholder.typicode.com/albums');
+  public get(userid: string): Observable<any> {
+    if(userid) {
+      return this.httpService.get('https://jsonplaceholder.typicode.com/albums?userId='+ userid);
+    }
+    return this.httpService.get('https://jsonplaceholder.typicode.com/albums/');
   }
 }
 

@@ -1,0 +1,13 @@
+.higlight{
+    cursor: pointer;
+}
+.rowselected{
+    background-color:grey;
+}  
+.pagination{
+cursor: pointer;
+}
+.selected a {
+    background-color:red;
+}
+    

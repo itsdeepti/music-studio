@@ -1,0 +1,14 @@
+<div class="container" >
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+        <tr *ngFor="let u of users" (click)="userClick(u)" >
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+        </tr>
+    </table>
+</div>

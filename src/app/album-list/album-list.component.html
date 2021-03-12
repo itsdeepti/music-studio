@@ -7,15 +7,17 @@
                 <th>Title</th>
             </tr>
         </thead>
-        <tr *ngFor="let a of albums">
+        <tr *ngFor="let a of albums" class="higlight" (click)="rowClick(a)" [class.rowselected]="a===selectedRow">
             <td>{{a.userId}}</td>
             <td>{{a.id}}</td>
             <td>{{a.title}}</td>
         </tr>
     </table>
-    <nav aria-label="...">
+
+    <nav aria-label="..." *ngIf='!userid'>
         <ul class="pagination">
-          <li *ngFor="let p of pagenos" (click)="pagenoclick(p)" class="page-item"><a class="page-link">{{p}}</a></li>
+            <li *ngFor="let p of pagenos" [class.selected]="p === selectedno" (click)="pagenoclick(p)"
+                class="page-item"><a class="page-link">{{p+1}}</a></li>
         </ul>
-      </nav>
+    </nav>
 </div>
